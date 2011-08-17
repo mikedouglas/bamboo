@@ -442,7 +442,7 @@ hr {
 	color: #000;
 	text-align: center;
 	line-height: .5;
-	padding: .5em 0;
+	margin: 1em 0;
 }
 
 section > hr:after {

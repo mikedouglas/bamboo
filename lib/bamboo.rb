@@ -7,6 +7,7 @@ class Bamboo < Sinatra::Base
 
   def initialize
     @projects = Project.collect 'projects'
+    @pages = Page.collect 'pages'
     super
   end
 
@@ -20,5 +21,9 @@ class Bamboo < Sinatra::Base
 
   get '/projects/:name' do |name|
     @projects[name].html
+  end
+
+  get '/:name' do |name|
+    @pages[name].html
   end
 end

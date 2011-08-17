@@ -2,13 +2,9 @@ require_relative 'page'
 require_relative 'template'
 
 class Project < Page
-  def html
-    if @config
-      template = Template.new("project")
-      template.render({'content' => super, 'page' => self})
-    else
-      super
-    end
+  def initialize(text)
+    super(text)
+    @template = Template.new 'project'
   end
 
   def to_liquid
