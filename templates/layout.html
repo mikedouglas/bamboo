@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Mike Douglas">
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="/c/main.css">
+    <link rel="icon" href="/favicon.png">
+    {% if page.title %}
+      <title>entropy.io: {{ page.title }}</title>
+    {% else %}
+      <title>entropy.io</title>
+    {% endif %}
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://use.typekit.com/xnx3fgd.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">entropy.io</a></li>
+        {% for path in page.paths %}
+          <li><a href="/{{path}}">{{path}}</a></li>
+        {% endfor %}
+        <li>{{ page.title }}</li>
+      </ul>
+    </nav>
+    {{ content }}
+    <footer>
+    <nav>
+      <span style="float: left;">Like what you just read? You should follow
+        Mike on twitter <a href="http://twitter.com/mikedouglas">here</a>.</span>
+      <ul>
+        <li><a href="/colophon">colophon</a></li>
+        <li><a href="/about">about</a></li>
+      </ul>
+    </nav>
+    </footer>
+  </body>
+</html>
