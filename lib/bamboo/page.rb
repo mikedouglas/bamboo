@@ -1,21 +1,23 @@
 require_relative 'markdown'
 require_relative 'yamlable'
+require 'digest'
 
 class Page
   include YAMLable
 
-  attr_reader :config, :body
+  attr_reader :last_modified
 
   # returns a map of stubs to page-like objects
   def self.collect(dir)
     Dir[dir + '/*'].reduce({}) do |map, fname|
       fname =~ /\/([^\/\.]+).[^.\/]+/
-      map[$1] = self.new(File.read(fname, :encoding => 'UTF-8')); map
+      map[$1] = self.new(fname); map
     end
   end
 
-  def initialize(text)
-    @config, @body = filter_config(text)
+  def initialize(fname)
+    @config, @body = filter_config(File.read(fname, :encoding => 'UTF-8'))
+    @last_modified = File.mtime(fname)
     @template = Template.new 'page'
   end
 
@@ -30,5 +32,9 @@ class Page
 
   def to_liquid
     @config
+  end
+
+  def sha1
+    Digest::SHA1.hexdigest(@body)
   end
 end

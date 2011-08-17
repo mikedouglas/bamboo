@@ -2,8 +2,8 @@ require_relative 'page'
 require_relative 'template'
 
 class Project < Page
-  def initialize(text)
-    super(text)
+  def initialize(fname)
+    super(fname)
     @template = Template.new 'project'
   end
 

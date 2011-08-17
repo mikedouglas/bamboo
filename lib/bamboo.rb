@@ -11,6 +11,14 @@ class Bamboo < Sinatra::Base
     super
   end
 
+  before do
+    if ENV['RACK_ENV'] == "production"
+      cache_control :public, :max_age => 36000
+    else
+      cache_control :no_cache, :must_revalidate
+    end
+  end
+
   get '/' do
     'Hello world!'
   end
@@ -20,10 +28,16 @@ class Bamboo < Sinatra::Base
   end
 
   get '/projects/:name' do |name|
-    @projects[name].html
+    page = @projects[name] || not_found("404")
+    last_modified page.last_modified
+    etag page.sha1
+    page.html
   end
 
   get '/:name' do |name|
-    @pages[name].html
+    page = @pages[name] || not_found("404")
+    last_modified page.last_modified
+    etag page.sha1
+    page.html
   end
 end
