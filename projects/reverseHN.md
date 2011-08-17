@@ -2,6 +2,7 @@
 title: reverseHN
 date: 2011 July 10
 author: Mike Douglas
+description: Find the news.yc discussion thread for any page on the web.
 ---
 
 If you’re at all like me, you’ve probably got 16+ browser tabs open at

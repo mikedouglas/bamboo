@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'bamboo/project'
+require_relative 'bamboo/template'
 
 class Bamboo < Sinatra::Base
   set :public, 'static'
@@ -11,6 +12,10 @@ class Bamboo < Sinatra::Base
 
   get '/' do
     'Hello world!'
+  end
+
+  get '/projects' do
+    Template.new("projects").render({'projects' => @projects.values})
   end
 
   get '/projects/:name' do |name|

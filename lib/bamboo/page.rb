@@ -1,7 +1,9 @@
 require_relative 'markdown'
-require 'yaml'
+require_relative 'yamlable'
 
 class Page
+  include YAMLable
+
   attr_reader :config, :body
 
   # returns a map of stubs to page-like objects
@@ -22,15 +24,5 @@ class Page
 
   def to_liquid
     @config
-  end
-
-  protected
-  # returns [map of headers, body]
-  def filter_config(text)
-    if text =~ /^---\n(.*)^---\n(.*)/m
-      return YAML.load($1), $2
-    else
-      return {}, text
-    end
   end
 end
