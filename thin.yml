@@ -1,0 +1,10 @@
+environment: production
+chdir: "/srv/http/entropy.io"
+pid: "/srv/http/entropy.io/tmp/thin.pid"
+rackup: "/srv/http/entropy.io/config.ru"
+log: "/srv/http/entropy.io/tmp/thin.log"
+daemonize: true
+address: 127.0.0.1
+port: 8000
+user: http
+group: http
