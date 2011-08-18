@@ -4,8 +4,9 @@ require 'digest'
 
 class Page
   include YAMLable
+  include Comparable
 
-  attr_reader :last_modified
+  attr_reader :last_modified, :config
 
   # returns a map of stubs to page-like objects
   def self.collect(dir)
@@ -19,6 +20,8 @@ class Page
     @config, @body = filter_config(File.read(fname, :encoding => 'UTF-8'))
     @last_modified = File.mtime(fname)
     @template = Template.new 'page'
+    fname =~ /\/([^\/\.]+).[^.\/]+/
+    @config['stub'] = $1
   end
 
   def html
@@ -36,5 +39,9 @@ class Page
 
   def sha1
     Digest::SHA1.hexdigest(@body)
+  end
+
+  def <=>(other)
+    (@config['date'] || @last_modified) <=> (other.config['date'] || other.last_modified)
   end
 end

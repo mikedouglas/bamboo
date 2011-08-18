@@ -10,7 +10,7 @@ class Project < Page
   def to_liquid
     super.merge({
       'paths' => ['projects'],
-      'url' => '/projects/' + @config['title']
+      'url' => '/projects/' + @config['stub']
     })
   end
 end
