@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>entropy.io</title>
   <link href="{{ site.url }}" />
-  <link type="application/atom+xml" rel="self" href="http://entropy.io/atom.xml" />
+  <link type="application/atom+xml" rel="self" href="http://entropy.io/feed" />
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ site.url }}</id>
   <author>
@@ -13,7 +13,7 @@
   {% for post in site.posts %}
   <entry>
     <id>{{ site.url }}{{ post.url }}</id>
-    <link type="text/html" rel="alternative" href="{{ site.url }}{{ post.url }}" />
+    <link type="text/html" rel="alternate" href="{{ site.url }}{{ post.url }}" />
     <title>{{ post.title }}</title>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <author>

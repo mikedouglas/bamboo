@@ -5,7 +5,7 @@ class Post < Page
     super(fname)
     @template = Template.new 'post.html'
     fname =~ /\/(\d{4}-\d{2}-\d{2})/
-    @config['date'] = Date.parse($1)
+    @config['date'] = DateTime.parse($1)
   end
 
   def to_liquid
