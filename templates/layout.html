@@ -23,9 +23,9 @@
       <ul>
         <li><a href="/">entropy.io</a></li>
         {% for path in page.paths %}
-          <li><a href="/{{path}}">{{path}}</a></li>
+          <li><a href="/{{ path }}">{{ path | downcase }}</a></li>
         {% endfor %}
-        <li>{{ page.title }}</li>
+        <li>{{ page.title | downcase }}</li>
       </ul>
     </nav>
     {{ content }}
