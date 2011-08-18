@@ -34,7 +34,7 @@ class Bamboo < Sinatra::Base
   end
 
   get '/feed' do
-    content_type 'application/xml+atom', :charset => 'utf-8'
+    content_type 'application/atom+xml', :charset => 'utf-8'
     Template.new('atom.xml').render({'posts' => @posts, 'site' => @site})
   end
 
