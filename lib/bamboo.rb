@@ -42,6 +42,10 @@ class Bamboo < Sinatra::Base
     index @posts, 'posts'
   end
 
+  get '/posts/' do
+    redirect to('/posts'), 301
+  end
+
   get '/posts/:title' do |title|
     post = @posts[title] || not_found('404')
     last_modified post.last_modified
@@ -51,6 +55,10 @@ class Bamboo < Sinatra::Base
 
   get '/projects' do
     index @projects, 'projects'
+  end
+
+  get '/projects/' do
+    redirect to('/projects'), 301
   end
 
   get '/projects/:name' do |name|
