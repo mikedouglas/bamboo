@@ -6,10 +6,13 @@ require_relative 'bamboo/template'
 class Bamboo < Sinatra::Base
   set :public, 'static'
 
-  def initialize
+  def initialize(config)
+    @site = config
     @projects = Project.collect 'projects'
     @pages = Page.collect 'pages'
     @posts = Post.collect 'posts'
+    @site['posts'] = @posts.values.sort {|a, b| b <=> a }
+    @site['time'] = @site['posts'].first.last_modified
     super
   end
 
