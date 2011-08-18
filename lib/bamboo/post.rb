@@ -3,7 +3,7 @@ require 'date'
 class Post < Page
   def initialize(fname)
     super(fname)
-    @template = Template.new 'post'
+    @template = Template.new 'post.html'
     fname =~ /\/(\d{4}-\d{2}-\d{2})/
     @config['date'] = Date.parse($1)
   end

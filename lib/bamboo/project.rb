@@ -4,7 +4,7 @@ require_relative 'template'
 class Project < Page
   def initialize(fname)
     super(fname)
-    @template = Template.new 'project'
+    @template = Template.new 'project.html'
   end
 
   def to_liquid

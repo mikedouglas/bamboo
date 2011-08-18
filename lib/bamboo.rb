@@ -14,7 +14,7 @@ class Bamboo < Sinatra::Base
   end
 
   def index(coll, name)
-    Template.new(name).render({name => coll.values.sort {|a, b| b <=> a}})
+    Template.new(name+'.html').render({name => coll.values.sort {|a, b| b <=> a}})
   end
 
   before do

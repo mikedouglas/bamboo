@@ -18,18 +18,18 @@ class Page
 
   def initialize(fname)
     @config, @body = filter_config(File.read(fname, :encoding => 'UTF-8'))
+    @config['content'] = @body = Markdown.convert(@body)
     @last_modified = File.mtime(fname)
-    @template = Template.new 'page'
+    @template = Template.new 'page.html'
     fname =~ /\/([^\/\.]+).[^.\/]+/
     @config['stub'] = $1
   end
 
   def html
-    content = Markdown.convert(@body)
     if @config
-      @template.render({'content' => content, 'page' => self})
+      @template.render({'content' => @body, 'page' => self})
     else
-      content
+      @body
     end
   end
 
