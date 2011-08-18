@@ -3,6 +3,8 @@ title: colophon
 date: 2011 August
 ---
 
+# colophon
+
 This site is hand-built, combining some awesome pieces of software,
 including [ruby], [sinatra], and [pandoc] into a package called
 [bamboo]. Unlike [most web publishing tools][wordpress], bamboo doesn't
