@@ -33,6 +33,10 @@ class Bamboo < Sinatra::Base
     halt 307, {'Location' => 'http://github.com/mikedouglas'}, ''
   end
 
+  get '/feed' do
+    Template.new('atom.xml').render({'posts' => @posts, 'site' => @site})
+  end
+
   get '/posts' do
     index @posts, 'posts'
   end
