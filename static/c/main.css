@@ -486,6 +486,13 @@ header {
   font-weight: 600;
 }
 
+@font-face {
+  font-family: 'SpecialAmpersand';
+  src: url('/ampersand-bold.ttf');
+  font-style: italic;
+  font-weight: 600;
+}
+
 em.amp {
   font-family: 'SpecialAmpersand';
 }
