@@ -19,7 +19,7 @@ I put my stuff on the web and let other people back it up.
 # Contact
 
 If you're stuck in the 20th century, you can always reach me at
-[hello@entropy.io](mail:hello@entropy.io) and I'll try to help you fix
+[hello@entropy.io](mailto:hello@entropy.io) and I'll try to help you fix
 your time machine.
 
 [github]: http://github.com/mikedouglas
