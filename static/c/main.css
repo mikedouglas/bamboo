@@ -483,7 +483,7 @@ header {
   font-family: 'SpecialAmpersand';
   src: url('/ampersand.woff');
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @font-face {
