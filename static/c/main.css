@@ -481,14 +481,14 @@ header {
 
 @font-face {
   font-family: 'SpecialAmpersand';
-  src: url('/ampersand.ttf');
+  src: url('/ampersand.woff');
   font-style: italic;
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'SpecialAmpersand';
-  src: url('/ampersand-bold.ttf');
+  src: url('/ampersand-bold.woff');
   font-style: italic;
   font-weight: 600;
 }
