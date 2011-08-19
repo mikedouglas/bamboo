@@ -64,7 +64,7 @@ body {
 	* http://www.wilsonminer.com/posts/2008/oct/20/relative-readability/
 */
 body, button, input, select, textarea {
-	font: 18px/1.625 Georgia, serif;
+	font: 15px/1.625 Georgia, serif;
 	_font-size: 1em; /* IE6 can't resize px-based text and most mobiles don't default the text to 16px */
 	color: #333; /* Black on white is too much contrast, #333 is a lot better */
 }
@@ -87,19 +87,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	color: #111; /* More contrast than body text for headings */
 }
-/*
-h1 {
-	font-size: 4.25em; /* 68px *
-	line-height: 1.1471em;
-	margin: 0 0 0.3824em;
-}
-*/
 
 h1 {
-	font-size: 46px; /* 42px */
+  font-size: 32px; /* 46px * (15/18) */
+/*	font-size: 46px; /* 46px */
 	font-weight: 700;
-	line-height: 1.2381em;
-	margin: 0;
+/*	line-height: 1.2381em;*/
+  line-height: 1em;
+  margin: 0 0 0.2em;
 }
 
 /*
@@ -374,9 +369,6 @@ h1, h2 {
 	font-family: futura-pt-1,futura-pt-2,"Futura",sans-serif !important;
 }
 
-h2 {
-	margin-top: -0.5em;
-}
 
 article {
 	font-family: minion-pro-1,minion-pro-2,"Minion Pro",serif !important;
@@ -462,10 +454,18 @@ footer {
 	font-weight: 400;
 	font-family: futura-pt-1, futura-pt-2;
 	font-size: 0.9em;
-	text-align: right;
 	border-top: 1px solid #000;
 	margin-top: 1em;
 	padding: 0.5em 0 0.5em 0;
+}
+
+footer span {
+  float: left;
+  display: none;
+}
+
+footer nav {
+  float: right;
 }
 
 pre {
@@ -499,8 +499,21 @@ em.amp {
 
 /* ==========================================================================================> SCREEN-ONLY WIDE MOBILE (480px+) STYLES */
 
-@media only screen and (min-width: 480px) {
-
+@media only screen and (min-width: 481px) {
+  footer span {
+    display: inline;
+  }
+  body, button, input, select, textarea {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 46px;
+    line-height: 1.2381em;
+    margin: 0;
+  }
+  h2 {
+  	margin-top: -0.5em;
+  }
 }
 
 /* ==========================================================================================> SCREEN-ONLY TABLETS/NETBOOKS (768px+) STYLES */
