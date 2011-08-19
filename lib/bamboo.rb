@@ -29,8 +29,12 @@ class Bamboo < Sinatra::Base
   end
 
   get '/' do
-    cache_control :no_cache, :must_revalidate
-    halt 307, {'Location' => 'http://github.com/mikedouglas'}, ''
+    # cache_control :no_cache, :must_revalidate
+    # halt 307, {'Location' => 'http://github.com/mikedouglas'}, ''
+    index = @pages['index']
+    last_modified index.last_modified
+    etag index.sha1
+    index.html
   end
 
   get '/feed' do

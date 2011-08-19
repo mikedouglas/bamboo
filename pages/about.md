@@ -11,7 +11,7 @@ of the web.
 
 I put my stuff on the web and let other people back it up.
 
-* [github] -- code, dotfiles, and &tc.
+* [github] -- code, dotfiles, &tc.
 * [last.fm] -- what I'm listening to when I'm staring at a screen.
 * [pinboard] -- bookmarks.
 * [twitter] -- status updates and attempts at wit.

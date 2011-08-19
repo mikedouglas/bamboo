@@ -22,7 +22,8 @@ adventurous, the [source][bamboo] is up on github.
 
 If you're using a modern browser (and you should be), the text you're
 reading is displayed in a mixture of Futura PT and Adobe Minion Pro,
-thanks to the talented folks at [typekit].
+thanks to the talented folks at [typekit]. All ampersands are borrowed
+from the italic faces of Adobe Caslon Pro.
 
 Everything is hosted in a tiny VPS with [prgmr].
 
